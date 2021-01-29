@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    /*
+    function clickHandler(e){
+      alert('thank you');
+    }
+    $(document).bind('ready',function(){
+      //bind 이벤트를 추가할때 사용하는 메소드
+      //ready 문서가 다운로드가 끝나면 ready가 실행
+      $('#click_me').bind('click',clickHandler );
+      $('#remove_event').bind('click',function(e){
+        $('#click_me').unbind('click',clickHandler);
+      });
+      $('#trigger_event').bind('click',function(e){
+        $('#click_me').trigger('click');
+      });
+    })
+    */
+    // 이벤트 헬퍼 예제
+    function clickHandler(e){
+      alert('thank you');
+    }
+    $(document).ready(function(){
+      $('#click_me').bind('click',clickHandler );
+      $('#remove_event').bind('click',function(e){
+        $('#click_me').unbind('click',clickHandler);
+      });
+      $('#trigger_event').bind('click',function(e){
+        $('#click_me').trigger('click');
+      });
+    })
+    //bind 이벤트를 추가할때 사용하는 메소드
+  </script>
+</head>
+<body>
+  <input type="button" id="click_me" value="click_me"/>
+  <input type="button" id="remove_event" value="unbind"/>
+  <input type="button" id="trigger_event" value="trigger"/>
+
+</body>
+</html>
