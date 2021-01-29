@@ -7,17 +7,25 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="welcome"></div>
+  <ul>
+    <li>test2</li>
+  </ul>
+  <ul class='foo'>
+    <li>test</li>
+  </ul>
+  <!-- wrapper은 jQuery를 잡아두는 포장
+      '$', 'JQuery'
+      (function('$'){
+        $('body').html('hello world');
+      })(jQuery)
+  -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript">
-    $('.welcome').html('hellow world').css('background-color','yellow');
-    /*
-    jQuery를 시작할땐 '$'를 사용한다.
-    '.welcome' welcome을 가진 클래스를 선택한다. #이면 id
-    html를 이용 welcome을 가진 클래스에 문자열을 삽입가능
-    jQuery의 문법
-    $(제어대상).method1().method2();
-    */
+    (function($){
+      $('ul.foo').click(function(){
+        $('li',this).css('background-color','red');
+      });
+    })(jQuery)
   </script>
 </body>
 </html>
